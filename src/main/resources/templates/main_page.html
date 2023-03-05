@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>!!DO ZROBIENIA!!</title>
+</head>
+<body>
+
+<table class="table">
+    <caption>List of subscribed news</caption>
+    <thead>
+    <tr>
+        <th scope="col" hidden>#</th>
+        <th scope="col">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="subscription:${allSubscriptions}">
+        <th th:text="${subscription.getId()}" hidden></th>
+        <td th:text="${subscription.getEmailAddress()}"></td>
+        <td>
+            <a th:href="@{/delete(id=${subscription.getId()})}" class="btn btn-danger">UNSUBSRIBE</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
