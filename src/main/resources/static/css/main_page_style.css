@@ -55,8 +55,9 @@ body {
 
 /* Style dla treści strony */
 .container {
+    float: aside;
     margin-top: 60px;
-    margin-left: 220px;
+    margin-right: 20px;
     padding: 40px;
     background-color: #fff;
     min-height: 400px;

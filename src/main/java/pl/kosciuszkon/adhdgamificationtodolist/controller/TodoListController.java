@@ -25,7 +25,7 @@ public class TodoListController {
     public String returnMainPage(Model model, @AuthenticationPrincipal ApplicationUser applicationUser) {
         List<TodoTask> allTodoTask = todoService.listAllTodo();
         model.addAttribute("allTodoTask", allTodoTask);
-        return "main";
+        return "main_page";
     }
 
     @PostMapping("createtodotask")
