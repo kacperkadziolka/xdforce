@@ -23,4 +23,9 @@ public class ApplicationUserService {
         applicationUser.setPassword(passwordEncoder.encode(applicationUser.getPassword()));
         applicationUserRepository.save(applicationUser);
     }
+
+    public void increaseLevel(ApplicationUser applicationUser) {
+        applicationUser.setLevel(applicationUser.getLevel() + 1);
+        applicationUserRepository.save(applicationUser);
+    }
 }

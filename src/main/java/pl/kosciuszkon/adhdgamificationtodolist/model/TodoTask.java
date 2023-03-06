@@ -3,14 +3,12 @@ package pl.kosciuszkon.adhdgamificationtodolist.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
 @Entity
+@Table(name = "todotask")
 public class TodoTask {
 
     @Id
@@ -20,6 +18,8 @@ public class TodoTask {
     private String description;
 
     private boolean status;
+
+    private String usernameOwner;
 
     public TodoTask(String description) {
         this.description = description;
