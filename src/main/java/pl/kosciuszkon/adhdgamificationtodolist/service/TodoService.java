@@ -2,6 +2,7 @@ package pl.kosciuszkon.adhdgamificationtodolist.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.kosciuszkon.adhdgamificationtodolist.model.ApplicationUser;
 import pl.kosciuszkon.adhdgamificationtodolist.model.TodoTask;
 import pl.kosciuszkon.adhdgamificationtodolist.repository.TodoRepository;
 
@@ -23,7 +24,7 @@ public class TodoService {
     }
 
     public List<TodoTask> listAllTodoForSpecificUser(String username) {
-        return null;
+        return todoRepository.getTodoTasksByUsernameOwner(username);
     }
 
     public void deleteTodo(Long id) {

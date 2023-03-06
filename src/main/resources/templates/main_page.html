@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,8 +24,8 @@
 
     <div class="sidebar">
         <img src="https://via.placeholder.com/100" alt="Placeholder obrazu">
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        Cześć, <span th:text="${name}"></span>
+        Poziom: <span th:text="${level}"></span>
     </div>
 
 
@@ -51,14 +51,7 @@
             <tr th:each="todo:${allTodoTask}">
                 <td th:text="${todo.getId()}" hidden></td>
                 <td th:text="${todo.getDescription()}"></td>
-                
-                <td>
-                    <a th:href="@{/update(id=${todo.getId()})}" class="btn btn-danger">DONE</a>
-                </td>
-                <td>
-                    <a th:href="@{/delete(id=${todo.getId()})}" class="btn btn-danger">DELETE</a>
-                </td>
-        
+
             </tr>
             </tbody>
         </table>

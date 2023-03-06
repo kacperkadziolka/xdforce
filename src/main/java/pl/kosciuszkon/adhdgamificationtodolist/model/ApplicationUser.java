@@ -24,7 +24,7 @@ public class ApplicationUser implements UserDetails {
 
     private String password;
 
-    private int character;
+    private int level;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -33,7 +33,7 @@ public class ApplicationUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return null;
+        return username;
     }
 
     @Override
